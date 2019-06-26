@@ -19,7 +19,8 @@ Make sure that docker is installed on your machine
     DB_USERNAME=root
     DB_PASSWORD=password
 </pre>
-- docker-compose exec app php artisan key:generate
+- docker-compose exec app php artisan key:generate 
+- docker-compose exec app php artisan migrate
 - docker-compose exec app php artisan config:cache
 As a final step, visit http://your_server_ip in the browser.
 

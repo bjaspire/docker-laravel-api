@@ -26,7 +26,7 @@ As a final step, visit http://your_server_ip in the browser.
 
 
 ## Generate Doc for API
-- php artisan apidoc:generate
+- docker-compose exec app php artisan apidoc:generate
 <p> Your documentation file will be stored on public/docs <br> 
     url :  http://your_server_ip/docs
 </p>

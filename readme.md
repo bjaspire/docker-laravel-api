@@ -40,5 +40,6 @@ As a final step, visit http://your_server_ip in the browser.
 <p> Create new database and add it into .env.testing </p>
 
 ### run
-- ./vendor/bin/phpunit
+- docker-compose exec app vendor/bin/phpunit
+
 

@@ -34,12 +34,3 @@ As a final step, visit http://your_server_ip in the browser.
 ### run
 - ./vendor/bin/phpunit
 
-
-
-
-
-
-
-
-
-

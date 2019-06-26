@@ -27,7 +27,39 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login']]);
+        $this->middleware('auth:api', ['except' => ['register','login']]);
+    }
+
+     /**
+     * User Registration.
+     * We dont need bearear token here.
+     * @bodyParam name required string name
+     * @bodyParam email required email email
+     * @bodyParam password required password password
+     * @response {
+     *       "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvdjFcL2xvZ2luIiwiaWF0IjoxNTYxNDgwOTIyLCJleHAiOjE1NjE0ODQ1MjIsIm5iZiI6MTU2MTQ4MDkyMiwianRpIjoidHZNbHgxdDBaNWdGRjRCMSIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.POaqvRrqFaRjf0wrOdPprVPSuHuzlh5BnYeMI8H5-cQ",
+     *       "token_type": "bearer",
+     *       "expires_in": 60,
+     *       "user": {
+     *           "id": 1,
+     *           "name": "Bijay",
+     *           "email": "bj.aspire@gmail.com",
+     *           "email_verified_at": null,
+     *           "created_at": "2019-06-25 07:01:25",
+     *           "updated_at": "2019-06-25 07:01:25"
+     *       }
+     *   }
+     */
+
+    public function register(Request $request)
+    {
+        $user = User::create([
+             'name' => $request->name,
+             'email' => $request->email,
+             'password' => bcrypt($request->password),
+         ]);
+        $token = auth()->login($user);
+        return $this->respondWithToken($token);
     }
 
     /**

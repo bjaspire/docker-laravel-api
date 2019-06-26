@@ -50,6 +50,88 @@
 <!-- END_INFO -->
 <h1>Auth Management</h1>
 <p>APIs for Auth Management</p>
+<!-- START_8ae5d428da27b2b014dc767c2f19a813 -->
+<h2>User Registration.</h2>
+<p>We dont need bearear token here.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://localhost/api/v1/register" \
+    -H "Authorization: Bearer {token}" \
+    -H "Content-Type: application/json" \
+    -d '{"name":"quidem","email":"tempora","password":"qui"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL("http://localhost/api/v1/register");
+
+let headers = {
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "name": "quidem",
+    "email": "tempora",
+    "password": "qui"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvdjFcL2xvZ2luIiwiaWF0IjoxNTYxNDgwOTIyLCJleHAiOjE1NjE0ODQ1MjIsIm5iZiI6MTU2MTQ4MDkyMiwianRpIjoidHZNbHgxdDBaNWdGRjRCMSIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.POaqvRrqFaRjf0wrOdPprVPSuHuzlh5BnYeMI8H5-cQ",
+    "token_type": "bearer",
+    "expires_in": 60,
+    "user": {
+        "id": 1,
+        "name": "Bijay",
+        "email": "bj.aspire@gmail.com",
+        "email_verified_at": null,
+        "created_at": "2019-06-25 07:01:25",
+        "updated_at": "2019-06-25 07:01:25"
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/v1/register</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>required</td>
+<td>optional</td>
+<td>string name</td>
+</tr>
+<tr>
+<td>email</td>
+<td>required</td>
+<td>optional</td>
+<td>email email</td>
+</tr>
+<tr>
+<td>password</td>
+<td>required</td>
+<td>optional</td>
+<td>password password</td>
+</tr>
+</tbody>
+</table>
+<!-- END_8ae5d428da27b2b014dc767c2f19a813 -->
 <!-- START_8c0e48cd8efa861b308fc45872ff0837 -->
 <h2>Get a JWT via given credentials.</h2>
 <p>We dont need bearear token here.</p>
@@ -59,7 +141,7 @@
 <pre><code class="language-bash">curl -X POST "http://localhost/api/v1/login" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"email":"est","password":"vel"}'
+    -d '{"email":"aut","password":"deleniti"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL("http://localhost/api/v1/login");
 
@@ -70,8 +152,8 @@ let headers = {
 }
 
 let body = {
-    "email": "est",
-    "password": "vel"
+    "email": "aut",
+    "password": "deleniti"
 }
 
 fetch(url, {
@@ -240,7 +322,7 @@ fetch(url, {
 <pre><code class="language-bash">curl -X GET -G "http://localhost/api/v1/transaction" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"page":3,"limit":14,"search":{"field":"suscipit","value":"id"}}'
+    -d '{"page":1,"limit":11,"search":{"field":"nostrum","value":"ipsa"}}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL("http://localhost/api/v1/transaction");
 
@@ -251,11 +333,11 @@ let headers = {
 }
 
 let body = {
-    "page": 3,
-    "limit": 14,
+    "page": 1,
+    "limit": 11,
     "search": {
-        "field": "suscipit",
-        "value": "id"
+        "field": "nostrum",
+        "value": "ipsa"
     }
 }
 
@@ -345,7 +427,7 @@ fetch(url, {
 <pre><code class="language-bash">curl -X POST "http://localhost/api/v1/transaction" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"title":"delectus","rate":69.8236906,"qty":4,"type":"sunt","author":18,"description":"repellat"}'
+    -d '{"title":"voluptatem","rate":559363825.5787237,"qty":11,"type":"quaerat","author":11,"description":"voluptatem"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL("http://localhost/api/v1/transaction");
 
@@ -356,12 +438,12 @@ let headers = {
 }
 
 let body = {
-    "title": "delectus",
-    "rate": 69.8236906,
-    "qty": 4,
-    "type": "sunt",
-    "author": 18,
-    "description": "repellat"
+    "title": "voluptatem",
+    "rate": 559363825.5787237,
+    "qty": 11,
+    "type": "quaerat",
+    "author": 11,
+    "description": "voluptatem"
 }
 
 fetch(url, {
@@ -448,7 +530,7 @@ fetch(url, {
 <pre><code class="language-bash">curl -X GET -G "http://localhost/api/v1/transaction/1" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"transaction_id":19}'
+    -d '{"transaction_id":3}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL("http://localhost/api/v1/transaction/1");
 
@@ -459,7 +541,7 @@ let headers = {
 }
 
 let body = {
-    "transaction_id": 19
+    "transaction_id": 3
 }
 
 fetch(url, {
@@ -516,7 +598,7 @@ fetch(url, {
 <pre><code class="language-bash">curl -X PUT "http://localhost/api/v1/transaction/1" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"transaction_id":6}'
+    -d '{"transaction_id":4}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL("http://localhost/api/v1/transaction/1");
 
@@ -527,7 +609,7 @@ let headers = {
 }
 
 let body = {
-    "transaction_id": 6
+    "transaction_id": 4
 }
 
 fetch(url, {
@@ -585,7 +667,7 @@ fetch(url, {
 <pre><code class="language-bash">curl -X DELETE "http://localhost/api/v1/transaction/1" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"transaction_id":5}'
+    -d '{"transaction_id":18}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL("http://localhost/api/v1/transaction/1");
 
@@ -596,7 +678,7 @@ let headers = {
 }
 
 let body = {
-    "transaction_id": 5
+    "transaction_id": 18
 }
 
 fetch(url, {

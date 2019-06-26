@@ -23,6 +23,75 @@ Welcome to the generated API reference.
 #Auth Management
 
 APIs for Auth Management
+<!-- START_8ae5d428da27b2b014dc767c2f19a813 -->
+## User Registration.
+
+We dont need bearear token here.
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/api/v1/register" \
+    -H "Authorization: Bearer {token}" \
+    -H "Content-Type: application/json" \
+    -d '{"name":"quidem","email":"tempora","password":"qui"}'
+
+```
+```javascript
+const url = new URL("http://localhost/api/v1/register");
+
+let headers = {
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "name": "quidem",
+    "email": "tempora",
+    "password": "qui"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+> Example response (200):
+
+```json
+{
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvdjFcL2xvZ2luIiwiaWF0IjoxNTYxNDgwOTIyLCJleHAiOjE1NjE0ODQ1MjIsIm5iZiI6MTU2MTQ4MDkyMiwianRpIjoidHZNbHgxdDBaNWdGRjRCMSIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.POaqvRrqFaRjf0wrOdPprVPSuHuzlh5BnYeMI8H5-cQ",
+    "token_type": "bearer",
+    "expires_in": 60,
+    "user": {
+        "id": 1,
+        "name": "Bijay",
+        "email": "bj.aspire@gmail.com",
+        "email_verified_at": null,
+        "created_at": "2019-06-25 07:01:25",
+        "updated_at": "2019-06-25 07:01:25"
+    }
+}
+```
+
+### HTTP Request
+`POST api/v1/register`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    name | required |  optional  | string name
+    email | required |  optional  | email email
+    password | required |  optional  | password password
+
+<!-- END_8ae5d428da27b2b014dc767c2f19a813 -->
+
 <!-- START_8c0e48cd8efa861b308fc45872ff0837 -->
 ## Get a JWT via given credentials.
 
@@ -34,7 +103,7 @@ We dont need bearear token here.
 curl -X POST "http://localhost/api/v1/login" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"email":"est","password":"vel"}'
+    -d '{"email":"aut","password":"deleniti"}'
 
 ```
 ```javascript
@@ -47,8 +116,8 @@ let headers = {
 }
 
 let body = {
-    "email": "est",
-    "password": "vel"
+    "email": "aut",
+    "password": "deleniti"
 }
 
 fetch(url, {
@@ -237,7 +306,7 @@ APIs for Transaction
 curl -X GET -G "http://localhost/api/v1/transaction" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"page":3,"limit":14,"search":{"field":"suscipit","value":"id"}}'
+    -d '{"page":1,"limit":11,"search":{"field":"nostrum","value":"ipsa"}}'
 
 ```
 ```javascript
@@ -250,11 +319,11 @@ let headers = {
 }
 
 let body = {
-    "page": 3,
-    "limit": 14,
+    "page": 1,
+    "limit": 11,
     "search": {
-        "field": "suscipit",
-        "value": "id"
+        "field": "nostrum",
+        "value": "ipsa"
     }
 }
 
@@ -325,7 +394,7 @@ Parameter | Type | Status | Description
 curl -X POST "http://localhost/api/v1/transaction" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"title":"delectus","rate":69.8236906,"qty":4,"type":"sunt","author":18,"description":"repellat"}'
+    -d '{"title":"voluptatem","rate":559363825.5787237,"qty":11,"type":"quaerat","author":11,"description":"voluptatem"}'
 
 ```
 ```javascript
@@ -338,12 +407,12 @@ let headers = {
 }
 
 let body = {
-    "title": "delectus",
-    "rate": 69.8236906,
-    "qty": 4,
-    "type": "sunt",
-    "author": 18,
-    "description": "repellat"
+    "title": "voluptatem",
+    "rate": 559363825.5787237,
+    "qty": 11,
+    "type": "quaerat",
+    "author": 11,
+    "description": "voluptatem"
 }
 
 fetch(url, {
@@ -399,7 +468,7 @@ Parameter | Type | Status | Description
 curl -X GET -G "http://localhost/api/v1/transaction/1" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"transaction_id":19}'
+    -d '{"transaction_id":3}'
 
 ```
 ```javascript
@@ -412,7 +481,7 @@ let headers = {
 }
 
 let body = {
-    "transaction_id": 19
+    "transaction_id": 3
 }
 
 fetch(url, {
@@ -463,7 +532,7 @@ Parameter | Type | Status | Description
 curl -X PUT "http://localhost/api/v1/transaction/1" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"transaction_id":6}'
+    -d '{"transaction_id":4}'
 
 ```
 ```javascript
@@ -476,7 +545,7 @@ let headers = {
 }
 
 let body = {
-    "transaction_id": 6
+    "transaction_id": 4
 }
 
 fetch(url, {
@@ -529,7 +598,7 @@ Parameter | Type | Status | Description
 curl -X DELETE "http://localhost/api/v1/transaction/1" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"transaction_id":5}'
+    -d '{"transaction_id":18}'
 
 ```
 ```javascript
@@ -542,7 +611,7 @@ let headers = {
 }
 
 let body = {
-    "transaction_id": 5
+    "transaction_id": 18
 }
 
 fetch(url, {

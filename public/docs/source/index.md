@@ -16,7 +16,6 @@ toc_footers:
 # Info
 
 Welcome to the generated API reference.
-[Get Postman Collection](http://localhost/docs/collection.json)
 
 <!-- END_INFO -->
 
@@ -34,7 +33,7 @@ We dont need bearear token here.
 curl -X POST "http://localhost/api/v1/register" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"name":"quidem","email":"tempora","password":"qui"}'
+    -d '{"name":"ut","email":"totam","password":"aut"}'
 
 ```
 ```javascript
@@ -47,9 +46,9 @@ let headers = {
 }
 
 let body = {
-    "name": "quidem",
-    "email": "tempora",
-    "password": "qui"
+    "name": "ut",
+    "email": "totam",
+    "password": "aut"
 }
 
 fetch(url, {
@@ -103,7 +102,7 @@ We dont need bearear token here.
 curl -X POST "http://localhost/api/v1/login" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"email":"aut","password":"deleniti"}'
+    -d '{"email":"qui","password":"voluptatem"}'
 
 ```
 ```javascript
@@ -116,8 +115,8 @@ let headers = {
 }
 
 let body = {
-    "email": "aut",
-    "password": "deleniti"
+    "email": "qui",
+    "password": "voluptatem"
 }
 
 fetch(url, {
@@ -306,7 +305,7 @@ APIs for Transaction
 curl -X GET -G "http://localhost/api/v1/transaction" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"page":1,"limit":11,"search":{"field":"nostrum","value":"ipsa"}}'
+    -d '{"page":1,"limit":14,"search":{"field":"ipsam","value":"commodi"}}'
 
 ```
 ```javascript
@@ -320,10 +319,10 @@ let headers = {
 
 let body = {
     "page": 1,
-    "limit": 11,
+    "limit": 14,
     "search": {
-        "field": "nostrum",
-        "value": "ipsa"
+        "field": "ipsam",
+        "value": "commodi"
     }
 }
 
@@ -394,7 +393,7 @@ Parameter | Type | Status | Description
 curl -X POST "http://localhost/api/v1/transaction" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"title":"voluptatem","rate":559363825.5787237,"qty":11,"type":"quaerat","author":11,"description":"voluptatem"}'
+    -d '{"title":"nostrum","rate":700.19296,"qty":11,"type":"vitae","author":13,"description":"incidunt"}'
 
 ```
 ```javascript
@@ -407,12 +406,12 @@ let headers = {
 }
 
 let body = {
-    "title": "voluptatem",
-    "rate": 559363825.5787237,
+    "title": "nostrum",
+    "rate": 700.19296,
     "qty": 11,
-    "type": "quaerat",
-    "author": 11,
-    "description": "voluptatem"
+    "type": "vitae",
+    "author": 13,
+    "description": "incidunt"
 }
 
 fetch(url, {
@@ -468,7 +467,7 @@ Parameter | Type | Status | Description
 curl -X GET -G "http://localhost/api/v1/transaction/1" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"transaction_id":3}'
+    -d '{"transaction_id":5}'
 
 ```
 ```javascript
@@ -481,7 +480,7 @@ let headers = {
 }
 
 let body = {
-    "transaction_id": 3
+    "transaction_id": 5
 }
 
 fetch(url, {
@@ -532,7 +531,7 @@ Parameter | Type | Status | Description
 curl -X PUT "http://localhost/api/v1/transaction/1" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"transaction_id":4}'
+    -d '{"transaction_id":5}'
 
 ```
 ```javascript
@@ -545,7 +544,7 @@ let headers = {
 }
 
 let body = {
-    "transaction_id": 4
+    "transaction_id": 5
 }
 
 fetch(url, {
@@ -598,7 +597,7 @@ Parameter | Type | Status | Description
 curl -X DELETE "http://localhost/api/v1/transaction/1" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"transaction_id":18}'
+    -d '{"transaction_id":20}'
 
 ```
 ```javascript
@@ -611,7 +610,7 @@ let headers = {
 }
 
 let body = {
-    "transaction_id": 18
+    "transaction_id": 20
 }
 
 fetch(url, {

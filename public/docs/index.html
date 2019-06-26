@@ -45,8 +45,7 @@
       <div class="content">
           <!-- START_INFO -->
 <h1>Info</h1>
-<p>Welcome to the generated API reference.
-<a href="http://localhost/docs/collection.json">Get Postman Collection</a></p>
+<p>Welcome to the generated API reference.</p>
 <!-- END_INFO -->
 <h1>Auth Management</h1>
 <p>APIs for Auth Management</p>
@@ -59,7 +58,7 @@
 <pre><code class="language-bash">curl -X POST "http://localhost/api/v1/register" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"name":"quidem","email":"tempora","password":"qui"}'
+    -d '{"name":"ut","email":"totam","password":"aut"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL("http://localhost/api/v1/register");
 
@@ -70,9 +69,9 @@ let headers = {
 }
 
 let body = {
-    "name": "quidem",
-    "email": "tempora",
-    "password": "qui"
+    "name": "ut",
+    "email": "totam",
+    "password": "aut"
 }
 
 fetch(url, {
@@ -141,7 +140,7 @@ fetch(url, {
 <pre><code class="language-bash">curl -X POST "http://localhost/api/v1/login" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"email":"aut","password":"deleniti"}'
+    -d '{"email":"qui","password":"voluptatem"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL("http://localhost/api/v1/login");
 
@@ -152,8 +151,8 @@ let headers = {
 }
 
 let body = {
-    "email": "aut",
-    "password": "deleniti"
+    "email": "qui",
+    "password": "voluptatem"
 }
 
 fetch(url, {
@@ -322,7 +321,7 @@ fetch(url, {
 <pre><code class="language-bash">curl -X GET -G "http://localhost/api/v1/transaction" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"page":1,"limit":11,"search":{"field":"nostrum","value":"ipsa"}}'
+    -d '{"page":1,"limit":14,"search":{"field":"ipsam","value":"commodi"}}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL("http://localhost/api/v1/transaction");
 
@@ -334,10 +333,10 @@ let headers = {
 
 let body = {
     "page": 1,
-    "limit": 11,
+    "limit": 14,
     "search": {
-        "field": "nostrum",
-        "value": "ipsa"
+        "field": "ipsam",
+        "value": "commodi"
     }
 }
 
@@ -427,7 +426,7 @@ fetch(url, {
 <pre><code class="language-bash">curl -X POST "http://localhost/api/v1/transaction" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"title":"voluptatem","rate":559363825.5787237,"qty":11,"type":"quaerat","author":11,"description":"voluptatem"}'
+    -d '{"title":"nostrum","rate":700.19296,"qty":11,"type":"vitae","author":13,"description":"incidunt"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL("http://localhost/api/v1/transaction");
 
@@ -438,12 +437,12 @@ let headers = {
 }
 
 let body = {
-    "title": "voluptatem",
-    "rate": 559363825.5787237,
+    "title": "nostrum",
+    "rate": 700.19296,
     "qty": 11,
-    "type": "quaerat",
-    "author": 11,
-    "description": "voluptatem"
+    "type": "vitae",
+    "author": 13,
+    "description": "incidunt"
 }
 
 fetch(url, {
@@ -530,7 +529,7 @@ fetch(url, {
 <pre><code class="language-bash">curl -X GET -G "http://localhost/api/v1/transaction/1" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"transaction_id":3}'
+    -d '{"transaction_id":5}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL("http://localhost/api/v1/transaction/1");
 
@@ -541,7 +540,7 @@ let headers = {
 }
 
 let body = {
-    "transaction_id": 3
+    "transaction_id": 5
 }
 
 fetch(url, {
@@ -598,7 +597,7 @@ fetch(url, {
 <pre><code class="language-bash">curl -X PUT "http://localhost/api/v1/transaction/1" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"transaction_id":4}'
+    -d '{"transaction_id":5}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL("http://localhost/api/v1/transaction/1");
 
@@ -609,7 +608,7 @@ let headers = {
 }
 
 let body = {
-    "transaction_id": 4
+    "transaction_id": 5
 }
 
 fetch(url, {
@@ -667,7 +666,7 @@ fetch(url, {
 <pre><code class="language-bash">curl -X DELETE "http://localhost/api/v1/transaction/1" \
     -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
-    -d '{"transaction_id":18}'
+    -d '{"transaction_id":20}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL("http://localhost/api/v1/transaction/1");
 
@@ -678,7 +677,7 @@ let headers = {
 }
 
 let body = {
-    "transaction_id": 18
+    "transaction_id": 20
 }
 
 fetch(url, {

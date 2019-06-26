@@ -26,7 +26,7 @@ return [
         /*
          * Specify whether the Postman collection should be generated.
          */
-        'enabled' => true,
+        'enabled' => false,
 
         /*
          * The name for the exported Postman collection. Default: config('app.name')." API"
